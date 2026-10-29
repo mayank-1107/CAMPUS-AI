@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CampusAI | College Assistant</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-icon">✦</div><div><strong>CampusAI</strong><small>COLLEGE KNOWLEDGE ASSISTANT</small></div></div>
+    <button class="new-chat" id="newChat">＋ <span>New conversation</span></button>
+    <div class="side-label">YOUR WORKSPACE</div>
+    <button class="nav-item active" data-tab="chat">◉ <span>AI Assistant</span></button>
+    <button class="nav-item" data-tab="docs">▤ <span>Knowledge base</span></button>
+    <button class="nav-item" data-tab="memory">◌ <span>Saved memory</span></button>
+    <div class="sidebar-bottom"><div class="status-dot"></div><div><b>Local project demo</b><small id="backendStatus">Checking backend…</small></div></div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar"><div><span class="eyebrow">YOUR ACADEMIC COPILOT</span><h1 id="pageTitle">College AI Assistant</h1></div><div class="top-right"><span class="pill"><i></i> Source-aware answers</span><div class="avatar">CA</div></div></header>
+    <section id="chatView" class="view">
+      <div class="welcome" id="welcome"><div class="hero-icon">✦</div><div class="eyebrow">ASK. LEARN. VERIFY.</div><h2>Your campus knowledge,<br><em>one question away.</em></h2><p>Ask questions about college documents. CampusAI retrieves relevant passages and shows the sources behind its answers.</p>
+        <div class="suggestions"><button class="suggestion" data-prompt="What does the sample handbook say about attendance?"> <span>◷</span><b>Attendance rules</b><small>Find relevant handbook guidance</small></button><button class="suggestion" data-prompt="How can I find examination dates and eligibility rules?"> <span>▣</span><b>Exam information</b><small>Search academic guidance</small></button><button class="suggestion" data-prompt="What should I do if a deadline is not in the documents?"> <span>⌁</span><b>Missing information</b><small>See how source grounding works</small></button></div>
+      </div>
+      <div class="messages" id="messages"></div>
+      <form class="composer" id="chatForm"><div class="composer-inner"><textarea id="messageInput" rows="1" placeholder="Ask about your college documents…" required></textarea><button id="sendButton" type="submit" aria-label="Send message">↑</button></div><div class="composer-foot"><span>↳ Answers are grounded in indexed files when sources are found.</span><span>Enter to send · Shift + Enter for new line</span></div></form>
+    </section>
+    <section id="docsView" class="view hidden"><div class="panel"><div class="panel-head"><div><h2>Knowledge base</h2><p>Upload official documents to make them searchable.</p></div><span class="count-badge" id="docCount">0 chunks</span></div><div class="upload-zone" id="dropZone"><div class="upload-icon">↑</div><h3>Drop a document here</h3><p>PDF, TXT or Markdown · max 12 MB</p><label class="primary-btn">Choose file<input type="file" id="fileInput" accept=".pdf,.txt,.md" hidden></label><div id="uploadStatus" class="muted"></div></div><h3 class="section-title">Indexed documents</h3><div id="documentList" class="document-list"></div><p class="notice">The included sample handbook is demo content, not an official college policy. Upload current, authorized documents before relying on answers.</p></div></section>
+    <section id="memoryView" class="view hidden"><div class="panel"><div class="panel-head"><div><h2>Saved memory</h2><p>Store useful context for future conversations. Keep it non-sensitive.</p></div></div><form id="memoryForm" class="memory-form"><input id="memoryInput" maxlength="500" placeholder="e.g. I prefer step-by-step explanations" required><button class="primary-btn" type="submit">Save memory</button></form><div id="memoryList" class="memory-list"></div><p class="notice">Memory is stored locally in this demo's data folder. This prototype does not include user authentication, so do not expose it publicly as-is.</p></div></section>
+    <footer class="footer">Built with retrieval-augmented generation · Local prototype <span>●</span> Verify important policies against official sources</footer>
+  </main>
+</div>
+<script src="/static/app.js"></script>
+</body></html>

@@ -1,0 +1,7 @@
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+python-multipart==0.0.20
+pypdf==5.4.0
+requests==2.32.3
+scikit-learn==1.6.1
+sentence-transformers==4.1.0
